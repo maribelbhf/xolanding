@@ -7,8 +7,10 @@ const Form = () => {
     height: 10em;
     margin-left: 14vw;
     margin-top: 32vh;
+
     @media only screen and (max-width: 440px) {
       display: none;
+      height: 7em;
     }
     @media only screen and (min-width: 441px) and (max-width: 799px) {
       height: 9em;
@@ -34,6 +36,9 @@ const Form = () => {
       text-align: center;
       margin-top: 32%;
       z-index: 10;
+    }
+    @media only screen and (max-width: 360px) {
+      height: 5.5em;
     }
   `
 
