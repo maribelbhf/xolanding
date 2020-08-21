@@ -31,7 +31,9 @@ const Layout = ({ children }) => {
     height: 100vh;
     background: linear-gradient(to right, #f9cecc, #ffe0da);
     @media only screen and (max-width: 440px) {
-      background: none;
+      background: linear-gradient(to bottom, #f9cecc, #ffe0da);
+      height: 100%;
+      width: 100%;
     }
   `
 
