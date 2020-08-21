@@ -9,6 +9,12 @@ html {
     overflow: hidden !important;
   }
 }
+@media only screen and (max-width: 440px) {
+  html,
+  body {
+    background: linear-gradient(to bottom, #fed5d4, #f6e0dd);
+  }
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
