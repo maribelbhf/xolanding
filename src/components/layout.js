@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
     height: 100vh;
     background: linear-gradient(to right, #f9cecc, #ffe0da);
     @media only screen and (max-width: 440px) {
-      background: linear-gradient(to bottom, #fed5d4, #f6e0dd);
+      background: none;
     }
   `
 
@@ -60,22 +60,22 @@ const Layout = ({ children }) => {
     z-index: 5;
     width: 80%;
     @media only screen and (max-width: 440px) {
-      height: 80%;
+      height: 80vh;
       left: -10em;
       right: -10em;
       width: 140%;
     }
     @media only screen and (min-width: 500px) and (max-width: 1210px) {
-      height: 90%;
+      height: 90vh;
       left: -10em;
       right: -10em;
       width: 140%;
     }
     @media only screen and (min-height: 800px) and (max-width: 430px) {
-      height: 70%;
+      height: 70vh;
     }
     @media only screen and (min-width: 1300px) {
-      width: 70%;
+      width: 70vw;
     }
   `
 
