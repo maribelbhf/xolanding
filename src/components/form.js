@@ -58,6 +58,7 @@ const Form = () => {
     font-family: Helvetica;
     font-weight: bold;
     font-size: 1.4em;
+    z-index: 1;
     @media only screen and (max-width: 440px) {
       width: 65%;
       margin-left: 0;
