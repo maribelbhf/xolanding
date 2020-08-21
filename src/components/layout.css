@@ -7,7 +7,6 @@ html {
 @media only screen and (min-width: 350px) {
   html {
     overflow: hidden !important;
-    display: block;
   }
 }
 @media only screen and (max-width: 440px) {
@@ -15,7 +14,8 @@ html {
   body {
     background: linear-gradient(to bottom, #fed5d4, #f6e0dd);
     max-height: 100% !important;
-
+    display: block;
+    height: 80% important!;
     overflow-x: hidden !important;
   }
 }
