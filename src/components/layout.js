@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
     position: absolute;
     bottom: 0;
     width: 100vw;
-    @media only screen and (max-width: 440px) {
+    @media only screen and (max-width: 1910px) {
       display: none;
     }
   `
