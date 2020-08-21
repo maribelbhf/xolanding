@@ -13,6 +13,9 @@ html {
   html,
   body {
     background: linear-gradient(to bottom, #fed5d4, #f6e0dd);
+    max-height: 100% !important;
+
+    overflow-x: hidden !important;
   }
 }
 body {

@@ -60,7 +60,7 @@ const Layout = ({ children }) => {
     z-index: 5;
     width: 80%;
     @media only screen and (max-width: 440px) {
-      height: 80vh;
+      height: 35em;
       left: -10em;
       right: -10em;
       width: 140%;
