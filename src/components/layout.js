@@ -15,7 +15,7 @@ import Form from "./form"
 import leaves from "../images/leaves.png"
 import styled from "styled-components"
 import logo from "../images/logo-desk.png"
-import Hlogo from "../images/hiddenlogo.png"
+import Hlogo from "../images/hiddenpinklogo.png"
 
 export default function Layout({ children }) {
   const data = useStaticQuery(graphql`
@@ -38,10 +38,10 @@ export default function Layout({ children }) {
     arr[0].addEventListener("animationend", function (event) {
       arr[0].style.display = "none"
       arrS[0].style.webkitAnimationPlayState = "running"
-      arrt[0].style.webkitAnimationPlayState = "running"
     })
     arrS[0].addEventListener("animationend", function (event) {
       arrS[0].style.display = "none"
+      arrt[0].style.webkitAnimationPlayState = "running"
     })
     arrt[0].addEventListener("animationend", function (event) {
       arrt[0].style.display = "none"
@@ -226,28 +226,43 @@ export default function Layout({ children }) {
     width: 100vw;
     position: absolute;
     background: #f2ced4;
+    text-align: center;
 
     z-index: 90;
-    animation: hide 2s;
-    animation-play-state: paused;
-    @keyframes hide {
-      from {
-        opacity: 1;
-      }
-      to {
-        opacity: 0;
-      }
-    }
+
     .hiddenLogo {
       animation: Grow 2s;
       animation-play-state: paused;
+      @media only screen and (max-width: 420px) {
+        animation: GrowMobile 2s;
+        animation-play-state: paused;
+      }
       @keyframes Grow {
         from {
           transform: scale(1);
+        }
+        to {
+          transform: scale(8);
+        }
+      }
+      @keyframes GrowMobile {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(4);
+        }
+      }
+    }
+
+    .hideCover {
+      animation: hide 2s;
+      animation-play-state: paused;
+      @keyframes hide {
+        from {
           opacity: 1;
         }
         to {
-          transform: scale(15);
           opacity: 0;
         }
       }
@@ -257,42 +272,28 @@ export default function Layout({ children }) {
   const Logo = styled.img`
     height: 4em;
     position: absolute;
-    top: 45%;
-    left: 45%;
+    top: 50%;
+    left: 50%;
 
     @media only screen and (max-width: 400px) {
       height: 4em;
       top: 40%;
-      left: 35%;
+      left: 40%;
     }
     @media only screen and (min-width: 401px) and (max-width: 590px) {
       height: 4em;
       top: 45%;
-      left: 35%;
-    }
-  `
-  const HLogo = styled.img`
-    height: 4em;
-    position: absolute;
-    top: 45%;
-    left: 45%;
-
-    @media only screen and (max-width: 400px) {
-      height: 4em;
-      top: 40%;
-      left: 35%;
+      left: 40%;
     }
     @media only screen and (min-width: 401px) and (max-width: 590px) {
-      height: 4em;
-      top: 45%;
-      left: 35%;
+      left: 40%;
     }
   `
 
   return (
     <>
       <Hidden className="hideCover">
-        <Logo src={logo} className="hiddenLogo" />
+        <Logo src={Hlogo} className="hiddenLogo" />
       </Hidden>
       <Loading className="loading">
         <Logo src={logo} />
