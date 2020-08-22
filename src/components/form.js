@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import title from "../images/comingsoon.png"
 import mtitle from "../images/coming-mobile.png"
+
 const Form = () => {
   const Title = styled.img`
     height: 10em;
@@ -18,10 +19,12 @@ const Form = () => {
     }
     @media only screen and (min-width: 800px) and (max-width: 1290px) {
       margin-left: 0;
+      height: 7em;
     }
 
-    @media only screen and (min-width: 1300px) {
+    @media only screen and (min-width: 1291px) {
       margin-left: 0;
+      height: 8em;
     }
     @media only screen and (min-width: 2500px) {
       height: 15em;
@@ -34,11 +37,14 @@ const Form = () => {
       display: inline-block;
       margin-bottom: 0;
       text-align: center;
-      margin-top: 32%;
+      margin-top: 30%;
       z-index: 10;
     }
     @media only screen and (max-width: 360px) {
       height: 5.5em;
+    }
+    @media only screen and (min-height: 535px) and (max-height: 800) {
+      margin-top: 27%;
     }
   `
 
@@ -111,15 +117,26 @@ const Form = () => {
     @media only screen and (min-width: 800px) and (max-width: 1210px) {
       font-size: 1.5em;
       width: 20%;
-      height: 2.8em;
+      height: 2em;
+    }
+    @media only screen and (min-width: 1211px) and (max-width: 1800px) {
+      font-size: 1.5em;
+      width: 40%;
+      height: 2.5em;
     }
   `
 
   return (
-    <Form>
+    <Form
+      name="SignUpForm"
+      method="POST"
+      data-netlify="true"
+      action="/thank-you"
+      className="form"
+    >
       <Title src={title}></Title>
       <MobileTitle src={mtitle} />
-      <Input placeholder="Your Email" type="email"></Input>
+      <Input placeholder="Your Email" type="email" name="email"></Input>
       <Submit type="submit" value="Sign Up"></Submit>
     </Form>
   )

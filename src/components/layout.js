@@ -72,30 +72,69 @@ export default function Layout({ children }) {
     border-radius: 50%;
     height: 110%;
     z-index: 5;
-    width: 80%;
-    @media only screen and (max-width: 360px) {
-      height: 28em !important;
+    width: 60%;
+    @media only screen and (max-width: 330px) {
+      height: 25em !important;
+      width: 120% !important;
+    }
+    @media only screen and (min-width: 331px) and (max-width: 390px) {
+      height: 35em !important;
+      width: 150% !important;
     }
     @media only screen and (max-width: 440px) {
       height: 32em;
       left: -10em;
       right: -10em;
-      width: 140%;
+      width: 130%;
       overflow: hidden !important;
     }
-    @media only screen and (min-width: 500px) and (max-width: 1210px) {
+    @media only screen and (min-width: 441px) and (max-width: 850px) {
       height: 90vh;
       left: -10em;
       right: -10em;
       width: 140%;
       overflow: hidden !important;
     }
-    @media only screen and (min-height: 800px) and (max-width: 430px) {
+    @media only screen and (min-width: 851px) and (max-width: 1279px) {
+      height: 120vh;
+      left: -10em;
+      right: -10em;
+      width: 60%;
+      overflow: hidden !important;
+    }
+    @media only screen and (max-height: 800px) and (max-width: 430px) {
       height: 70vh;
       overflow: hidden !important;
     }
-    @media only screen and (min-width: 1300px) {
-      width: 70vw;
+    @media only screen and (min-width: 880px) and (min-height: 949px) {
+      width: 72%;
+    }
+    @media only screen and (min-width: 1320px) and (max-height: 948px) {
+      width: 60%;
+    }
+    @media only screen and (min-width: 1280px) and (min-height: 949px) {
+      width: 72%;
+    }
+    @media only screen and (min-width: 1280px) and (max-height: 800px) {
+      width: 60%;
+    }
+    @media only screen and (min-width: 800px) and (max-height: 600px) {
+      width: 50%;
+    }
+    @media only screen and (min-width: 1300px) and (max-height: 700px) {
+      width: 50%;
+    }
+    @media only screen and (min-width: 1500px) and (max-height: 499px) {
+      width: 40%;
+    }
+    @media only screen and (min-width: 1500px) and (min-height: 500px) and (max-height: 700px) {
+      width: 50%;
+    }
+    @media only screen and (min-width: 1800px) and (max-height: 900px) {
+      width: 45%;
+    }
+    @media only screen and (min-width: 1600px) and (max-height: 900px) {
+      width: 50%;
     }
   `
 
@@ -107,6 +146,13 @@ export default function Layout({ children }) {
     width: 38%;
     @media only screen and (min-width: 200px) and (max-width: 1210px) {
       display: none;
+    }
+    @media only screen and (min-width: 851px) and (max-width: 1010px) {
+      top: -120px;
+    }
+
+    @media only screen and (min-width: 1251px) and (max-width: 2000px) {
+      top: -120px;
     }
   `
 
@@ -158,18 +204,18 @@ export default function Layout({ children }) {
   `
 
   const Logo = styled.img`
-    height: 8em;
+    height: 4em;
     position: absolute;
     top: 45%;
     left: 45%;
 
     @media only screen and (max-width: 400px) {
-      height: 6em;
+      height: 4em;
       top: 40%;
-      left: 30%;
+      left: 35%;
     }
     @media only screen and (min-width: 401px) and (max-width: 590px) {
-      height: 6em;
+      height: 4em;
       top: 45%;
       left: 35%;
     }
