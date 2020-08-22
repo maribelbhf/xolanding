@@ -15,6 +15,7 @@ import Form from "./form"
 import leaves from "../images/leaves.png"
 import styled from "styled-components"
 import logo from "../images/logo-desk.png"
+import Hlogo from "../images/hiddenlogo.png"
 
 export default function Layout({ children }) {
   const data = useStaticQuery(graphql`
@@ -247,6 +248,23 @@ export default function Layout({ children }) {
   `
 
   const Logo = styled.img`
+    height: 4em;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+
+    @media only screen and (max-width: 400px) {
+      height: 4em;
+      top: 40%;
+      left: 35%;
+    }
+    @media only screen and (min-width: 401px) and (max-width: 590px) {
+      height: 4em;
+      top: 45%;
+      left: 35%;
+    }
+  `
+  const HLogo = styled.img`
     height: 4em;
     position: absolute;
     top: 45%;

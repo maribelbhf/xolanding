@@ -53,7 +53,7 @@ const Form = () => {
     position: absolute;
     top: 0;
 
-    @media only screen and (max-width: 2500px) {
+    @media only screen and (max-width: 4000px) {
       text-align: center;
       width: 100%;
     }
@@ -130,10 +130,12 @@ const Form = () => {
     <Form
       name="SignUpForm"
       method="POST"
-      data-netlify="true"
+      data-netlify-honeypot="bot-field"
       action="/thank-you"
       className="form"
     >
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="form-name" value="contact" />
       <Title src={title}></Title>
       <MobileTitle src={mtitle} />
       <Input placeholder="Your Email" type="email" name="email"></Input>
