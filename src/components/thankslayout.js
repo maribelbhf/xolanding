@@ -55,6 +55,7 @@ export default function ThanksLayout({ children }) {
     height: 110%;
     z-index: 5;
     width: 60%;
+    text-align: center;
     @media only screen and (max-width: 330px) {
       height: 25em !important;
       width: 120% !important;
@@ -70,11 +71,18 @@ export default function ThanksLayout({ children }) {
       width: 130%;
       overflow: hidden !important;
     }
-    @media only screen and (min-width: 441px) and (max-width: 850px) {
+    @media only screen and (min-width: 441px) and (max-width: 650px) {
       height: 90vh;
       left: -10em;
       right: -10em;
       width: 140%;
+      overflow: hidden !important;
+    }
+    @media only screen and (min-width: 661px) and (max-width: 850px) {
+      height: 90vh;
+      left: -10em;
+      right: -10em;
+      width: 100%;
       overflow: hidden !important;
     }
     @media only screen and (min-width: 851px) and (max-width: 1279px) {
@@ -138,117 +146,40 @@ export default function ThanksLayout({ children }) {
     }
   `
 
-  const Loading = styled.div`
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    background: #f2ced4;
-    animation: color-me-out 8s 1;
-    z-index: 100;
+  const Title = styled.p`
+    margin-top: 32vh;
+    font-size: 2.5em;
+    font-family: Helvetica;
+    color: white;
+    line-height: 1em;
 
-    @keyframes color-me-out {
-      0% {
-        background: #e75d58;
-      }
-      10% {
-        background: #f9808b;
-      }
-      20% {
-        background: #99d9be;
-      }
-      30% {
-        background: #f6d635;
-      }
-      40% {
-        background: #f2ced4;
-      }
-      50% {
-        background: #e75d58;
-      }
-      60% {
-        background: #e75d58;
-      }
-      70% {
-        background: #f9808b;
-      }
-      80% {
-        background: #99d9be;
-      }
-      82% {
-        background: #f2ced4;
-        opacity: 1;
-      }
-      100% {
-        display: none;
-        opacity: 0;
-      }
+    @media only screen and (max-width: 440px) {
+      height: 7em;
+      margin-top: 32vh;
+      font-size: 1.5em;
     }
-  `
-  const Hidden = styled.div`
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    background: #f2ced4;
+    @media only screen and (min-width: 441px) and (max-width: 799px) {
+      height: 9em;
+      margin-left: 0;
+      margin-top: 40vh;
+      font-size: 1.6em;
+    }
+    @media only screen and (min-width: 800px) and (max-width: 1290px) {
+      margin-left: 0;
+      height: 7em;
+      line-height: 1em;
+      margin-top: 45vh;
+    }
 
-    z-index: 90;
-    animation: hide 2s;
-    animation-play-state: paused;
-    @keyframes hide {
-      from {
-        opacity: 1;
-      }
-      to {
-        opacity: 0;
-      }
+    @media only screen and (min-width: 1291px) {
+      margin-left: 0;
+      height: 8em;
+      margin-top: 45vh;
     }
-    .hiddenLogo {
-      animation: Grow 2s;
-      animation-play-state: paused;
-      @keyframes Grow {
-        from {
-          transform: scale(1);
-          opacity: 1;
-        }
-        to {
-          transform: scale(15);
-          opacity: 0;
-        }
-      }
-    }
-  `
-
-  const Logo = styled.img`
-    height: 4em;
-    position: absolute;
-    top: 45%;
-    left: 45%;
-
-    @media only screen and (max-width: 400px) {
-      height: 4em;
-      top: 40%;
-      left: 35%;
-    }
-    @media only screen and (min-width: 401px) and (max-width: 590px) {
-      height: 4em;
-      top: 45%;
-      left: 35%;
-    }
-  `
-  const HLogo = styled.img`
-    height: 4em;
-    position: absolute;
-    top: 45%;
-    left: 45%;
-
-    @media only screen and (max-width: 400px) {
-      height: 4em;
-      top: 40%;
-      left: 35%;
-    }
-    @media only screen and (min-width: 401px) and (max-width: 590px) {
-      height: 4em;
-      top: 45%;
-      left: 35%;
+    @media only screen and (min-width: 2500px) {
+      height: 15em;
+      margin-top: 45vh;
+      font-size: 3em;
     }
   `
 
@@ -256,7 +187,12 @@ export default function ThanksLayout({ children }) {
     <>
       <Page>
         <Leaves src={leaves}></Leaves>
-        <Circle>Thank you! Your form has been submited.</Circle>
+        <Circle>
+          <Title>
+            Thank you!
+            <br /> Your form has been submited.
+          </Title>
+        </Circle>
         <Floor />
       </Page>
     </>

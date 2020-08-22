@@ -121,6 +121,13 @@ export default function Layout({ children }) {
     @media only screen and (min-width: 880px) and (min-height: 949px) {
       width: 72%;
     }
+    @media only screen and (min-width: 661px) and (max-width: 850px) {
+      height: 90vh;
+      left: -10em;
+      right: -10em;
+      width: 100%;
+      overflow: hidden !important;
+    }
     @media only screen and (min-width: 1320px) and (max-height: 948px) {
       width: 60%;
     }
