@@ -30,9 +30,20 @@ export default function Layout({ children }) {
   useEffect(() => {
     let loader = document.getElementsByClassName("loading")
     var arr = Array.from(loader)
-
+    let second = document.getElementsByClassName("hiddenLogo")
+    var arrS = Array.from(second)
+    let third = document.getElementsByClassName("hideCover")
+    var arrt = Array.from(third)
     arr[0].addEventListener("animationend", function (event) {
       arr[0].style.display = "none"
+      arrS[0].style.webkitAnimationPlayState = "running"
+      arrt[0].style.webkitAnimationPlayState = "running"
+    })
+    arrS[0].addEventListener("animationend", function (event) {
+      arrS[0].style.display = "none"
+    })
+    arrt[0].addEventListener("animationend", function (event) {
+      arrt[0].style.display = "none"
     })
   }, [])
 
@@ -202,6 +213,38 @@ export default function Layout({ children }) {
       }
     }
   `
+  const Hidden = styled.div`
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background: #f2ced4;
+
+    z-index: 90;
+    animation: hide 2s;
+    animation-play-state: paused;
+    @keyframes hide {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+    .hiddenLogo {
+      animation: Grow 2s;
+      animation-play-state: paused;
+      @keyframes Grow {
+        from {
+          transform: scale(1);
+          opacity: 1;
+        }
+        to {
+          transform: scale(15);
+          opacity: 0;
+        }
+      }
+    }
+  `
 
   const Logo = styled.img`
     height: 4em;
@@ -223,6 +266,9 @@ export default function Layout({ children }) {
 
   return (
     <>
+      <Hidden className="hideCover">
+        <Logo src={logo} className="hiddenLogo" />
+      </Hidden>
       <Loading className="loading">
         <Logo src={logo} />
       </Loading>
