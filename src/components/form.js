@@ -128,11 +128,10 @@ const Form = () => {
 
   return (
     <Form
-      name="SignUpForm"
-      method="POST"
-      data-netlify-honeypot="bot-field"
+      method="post"
+      netlify-honeypot="bot-field"
       data-netlify="true"
-      action="/thank-you"
+      name="contact"
       className="form"
     >
       <input type="hidden" name="bot-field" />
