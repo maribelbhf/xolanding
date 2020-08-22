@@ -131,6 +131,7 @@ const Form = () => {
       name="SignUpForm"
       method="POST"
       data-netlify-honeypot="bot-field"
+      data-netlify="true"
       action="/thank-you"
       className="form"
     >
