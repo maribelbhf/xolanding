@@ -1,50 +1,28 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import title from "../images/comingsoon.png"
+import title from "../images/comingsoont.png"
 import mtitle from "../images/coming-mobile.png"
 
 const Form = () => {
   const Title = styled.img`
-    height: 10em;
-    margin-left: 14vw;
-    margin-top: 32vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 
     @media only screen and (max-width: 440px) {
       display: none;
-      height: 7em;
     }
-    @media only screen and (min-width: 441px) and (max-width: 799px) {
-      height: 9em;
-      margin-left: 0;
-    }
-    @media only screen and (min-width: 800px) and (max-width: 1290px) {
-      margin-left: 0;
-      height: 7em;
-    }
-
-    @media only screen and (min-width: 1291px) {
-      margin-left: 0;
-      height: 8em;
-    }
-    @media only screen and (min-width: 2500px) {
-      height: 15em;
+    @media only screen and (min-width: 900px) and (max-width: 1079px) {
+      width: 50%;
     }
   `
 
   const MobileTitle = styled.img`
     display: none;
+    margin-bottom: 0 !important;
     @media only screen and (max-width: 440px) {
       display: inline-block;
-      margin-bottom: 0;
-      text-align: center;
-      margin-top: 30%;
       z-index: 10;
-    }
-    @media only screen and (max-width: 360px) {
-      height: 5.5em;
-    }
-    @media only screen and (min-height: 535px) and (max-height: 800) {
-      margin-top: 27%;
     }
   `
 
@@ -59,8 +37,10 @@ const Form = () => {
     }
   `
   const Input = styled.input`
-    width: 65%;
-    margin-left: 14vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
     background-color: transparent;
     border: none;
     border-bottom: 3px solid white;
@@ -70,18 +50,8 @@ const Form = () => {
     font-weight: bold;
     font-size: 1.4em;
     z-index: 1;
-    @media only screen and (max-width: 440px) {
-      width: 65%;
-      margin-left: 0;
-      font-size: 1em;
-      margin-top: -10%;
-    }
-    @media only screen and (min-width: 441px) and (max-width: 799px) {
-      margin-left: 0;
-      width: 58%;
-    }
-    @media only screen and (min-width: 500px) {
-      margin-left: 0;
+    @media only screen and (max-width: 800px) {
+      width: 80%;
     }
   `
   const Submit = styled.input`
@@ -91,7 +61,7 @@ const Form = () => {
 
     width: 30vw;
     height: 9vh;
-    padding: 16px 32px;
+
     text-align: center;
     line-height: 0.3;
     margin: 0 auto;
@@ -109,21 +79,13 @@ const Form = () => {
       width: 40%;
       height: 2.8em;
     }
-    @media only screen and (min-width: 441px) and (max-width: 799px) {
-      font-size: 1.2em;
-      width: 20%;
-      height: 2.8em;
-    }
-    @media only screen and (min-width: 800px) and (max-width: 1210px) {
-      font-size: 1.5em;
-      width: 20%;
-      height: 2em;
-    }
-    @media only screen and (min-width: 1211px) and (max-width: 1800px) {
-      font-size: 1.5em;
-      width: 40%;
-      height: 2.5em;
-    }
+  `
+  const CenteredContainer = styled.div`
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   `
 
   return (
@@ -137,10 +99,12 @@ const Form = () => {
     >
       <input type="hidden" name="bot-field" />
       <input type="hidden" name="form-name" value="contact" />
-      <Title src={title}></Title>
-      <MobileTitle src={mtitle} />
-      <Input placeholder="Your Email" type="email" name="email"></Input>
-      <Submit type="submit" value="Sign Up"></Submit>
+      <CenteredContainer>
+        <Title src={title}></Title>
+        <MobileTitle src={mtitle} />
+        <Input placeholder="Your Email" type="email" name="email"></Input>
+        <Submit type="submit" value="Sign Up"></Submit>
+      </CenteredContainer>
     </Form>
   )
 }
