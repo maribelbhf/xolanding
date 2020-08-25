@@ -7,27 +7,16 @@
 
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import "./layout.css"
 import Form from "./form"
-import leaves from "../images/leaves.png"
+
 import styled from "styled-components"
 import logo from "../images/logo-desk.png"
 import Hlogo from "../images/hiddenpinklogo.png"
 import BackgroundSection from "./backgroundImage"
 
 export default function Layout({ children }) {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   useEffect(() => {
     let loader = document.getElementsByClassName("loading")
     var arr = Array.from(loader)
